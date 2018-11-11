@@ -1,3 +1,4 @@
+/* Copyright © 2018  Daniel Olano | @license GPLv3 */
 const mbxVer = 'v0.51.0'
 const mbxJS = `https://api.tiles.mapbox.com/mapbox-gl-js/${mbxVer}/mapbox-gl-dev.js`
 const mbxCSS = `https://api.tiles.mapbox.com/mapbox-gl-js/${mbxVer}/mapbox-gl.css`
