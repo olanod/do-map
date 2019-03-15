@@ -11,21 +11,25 @@
   <style>
     html, body { margin: 0; padding: 0; height: 100%; }
     :not(:defined) { opacity: 0; }
-    do-map { height: 100%; }
+    d-map { height: 100%; }
   </style>
 </head>
 
 <body>
-  <do-map zoom="2"></do-map>
+  <d-map z="3"></d-map>
 
   <script type="module">
     import { Marker } from './map.js'
+    
+    console.log(`Try loading this page with one or more 'm' query parameters.
+Usage: ?m=<title>;<lng>;<lat>
+`)
     // demo functionality, show markers taken from the URL query parameters
     const params = new URL(location).searchParams
     const markers = params.getAll('m')
       .map(m => m.split(';'))
       .map(([title, ...lngLat]) => Object.assign(new Marker, { title, lngLat }))
-    const map = document.querySelector('do-map')
+    const map = document.querySelector('d-map')
     map.append(...markers)
     const zoom = parseInt(params.get('z'))
     if (zoom) map.zoom = zoom
